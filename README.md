@@ -1,8 +1,19 @@
 ## 5-Axis Robotic Arm
 
-![image](https://user-images.githubusercontent.com/41247872/132286744-f61dbbb3-6c37-4f1d-899b-ab8461038803.png)
+![image](https://user-images.githubusercontent.com/41247872/132293850-77411cc3-694c-448b-aa72-ad7f48aba4dd.png)
 
 A 5-axis robot arm projet with the purpose of understanding the 3D printing process and microcontroller basics. This project also included calculation with inverse kinematics both by hand and through software in Python.
+
+#### Software used
+- Solidworks
+- Fusion 360
+- Pycharm (Python IDE)
+- Arduino IDE (Arduino C++)
+- Klipper/fluidd (3D Printing)
+
+#### Hardware used
+- Ender 3 (modified, see below)
+- Various hand tools
 
 ### Project Goals
 
@@ -60,6 +71,15 @@ For the material of the robot, I opted to use Polylactic Acid (PLA) as the main 
 
 #### Robot Arm
 
-For the arm itself, I had decided to use a 12:7:10 ratio for the Arm, Forearm, and Hand. Since I would be doing a 5-axis configuration, it would require 5 motors: One in the base, the shoulder, the elbow pitch, the wrist pitch, and the wrist rotation. 
+For the arm itself, I had decided to use a 12:7:10 ratio for the Arm, Forearm, and Hand. Since I would be doing a 5-axis configuration, it would require 5 motors: One in the base, the shoulder, the elbow pitch, the wrist pitch, and the wrist rotation. I started work on the base of the robot.
+
+What I had come up with was a design that incorporated the motor into the base, which also had a slew bearing placed on the top of it. Wiring to the controller could be done via a hole in the back. I chose a slew bearing beacuse the base would be experiencing loads perpendicular to the top of the base. Since I did not have the tooling nor the funds to purchase such a bearing, I opted to 3D print one. I closely followed a tutorial here: https://www.thingiverse.com/thing:2375124
+
+The base of the robot:
+![image](https://user-images.githubusercontent.com/41247872/132292562-a82466d5-b034-41ff-99ac-5a0a441b0a44.png)
+
+
+Solidworks model of the bot:
+![image](https://user-images.githubusercontent.com/41247872/132286744-f61dbbb3-6c37-4f1d-899b-ab8461038803.png)
 
 \\\\\\\\\\\ UNFINISHED
