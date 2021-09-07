@@ -56,8 +56,10 @@ Some other physical modifications I did was to add a second Z-axis rod for bette
 
 Here is a great video on the topic. While I had lead screws, this person used ball screws: https://youtu.be/mqSQhwqSzvg
 
-For the material of the device, I opted to use Polylactic Acid (PLA) as the main structural material. This was due to its forgiving nature in printing and its availability. I had also been working with the material for some time now, so I was familiar with how it acted.
+For the material of the robot, I opted to use Polylactic Acid (PLA) as the main structural material. This was due to its forgiving nature in printing and its availability. I had also been working with the material for some time now, so I was familiar with how it acted.
 
 #### Robot Arm
 
 For the arm itself, I had decided to use a 12:7:10 ratio for the Arm, Forearm, and Hand. Since I would be doing a 5-axis configuration, it would require 5 motors: One in the base, the shoulder, the elbow pitch, the wrist pitch, and the wrist rotation. 
+
+- - - - UNFINISHED - - - -
