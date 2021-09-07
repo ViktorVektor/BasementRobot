@@ -86,15 +86,23 @@ An additional issue I encountered was powering the RAMPS board and stepepr motor
 
 ![image](https://user-images.githubusercontent.com/41247872/132395448-1738fdaf-8d79-408c-9cfd-f2bc6d8dfbd2.png)
 
+
+### June 2021
+
 #### Robot Arm Part 2
 
 After experiences with the first model, I researched methods of increasing torque through mechanical means. I learned about planetery gearsets and compound pulleys being used in robotics.  I found a helpful user demonstrating how one actuator they design functioned: https://www.thingiverse.com/thing:3293562. This design had a 38:1 ratio, allowing my robot to use a single stepper motor at the shoulder. Another method I learned about were compund pulleys, where a torque increase could be achieved over a distance: http://www.robotpark.com/academy/robotic-mechanisms-pulley-systems/ . This system could reduce the weight the shoulder stepper had to carry by moving the elbow stepper next to the base.
+
+This was also exam season for summer courses so work was slow.
+
+
+### July 2021
 
 To implement the gearbox was fairly streightforward, but a few things needed to be considered beforehand. Since bigger motors were being used, the physical footprint of the robot needed to be increased, bringing with it more weight acting on the base. More torque than the first robot was needed to run it so joint friction needed to be reduced. At the shoulder where the first gearbox went, it needed to be strengthened so a wider and stronger housing was designed for it, fitting over the first robot's base. Within the gearbox itself, PTFE lubricant was used along wih steel ball bearings. 
 
 ![image](https://user-images.githubusercontent.com/41247872/132396874-662cc33c-154a-4346-a233-de8567c3abbd.png)
 
-For the pulley system, the input sprocket would be placed concentric with the shoulder gearbox which then compounded along the interior of the arm. Each stage had a 1:3 ratio, for a total of about 12:1 at the output. The sprockets were made of PLA filament, while the belts were made of the flexible TPU filament. 
+For the pulley system, the input sprocket would be placed concentric with the shoulder gearbox which then compounded along the interior of the arm. Each stage had a 1:3 ratio, for a total of about 12:1 at the output. The sprockets were made of PLA filament, while the belts were made of the flexible TPU filament. At the output, each side of the shaft was fitted with 688 Bearings on each side to reduce friction and support the concentrated loads.
 
 I closely followed a tutorial for the sprockets here: https://www.thingiverse.com/thing:16627 
 
@@ -103,7 +111,37 @@ The belts were followed from here: https://www.thingiverse.com/thing:2682637
 ![image](https://user-images.githubusercontent.com/41247872/132397670-73884dac-68f9-413c-9531-f396c2e9fd31.png)
 
 
+The wrist pitch stepper motor was also designed to use the gearbox, albeit a smaller version with the same gearing ratio. At this stage, the torque required is much less than at the shoulder, but the gearbox was already available from earlier print tests. The forearm would be connected to the pulley system's output, which then carried the hand. PLA is quite stiff, so there was little flexing within the forearm even with all these attachments.
+
+![image](https://user-images.githubusercontent.com/41247872/132399504-bd69e0d0-b3f2-485e-bb38-f6d6c16e9402.png)
+
+
+At the wrist, a smaller stepper motor would be used along with a gearbox, again available from previous testing. It will also have the end effector mount. This mount was designed to be swappable via a few screws. In its current configuration, it allows for 2 servo motors to be inserted for a simple claw.
+
+![image](https://user-images.githubusercontent.com/41247872/132399891-9cc27e7a-9af5-401f-9b51-76c2c8e5c970.png)
+ 
+With most of the main robot completed, parts were printed and assembled by about mid-July.
+
+
+#### Cable Carrier
+
+As can be seen in the first image of this webpage, the robot has a distinct disc near the base of the arm. This was the plate which contained the cabble carrier. This system allowed the robot to have about 440-degrees of rotation. It also helped the cabling remain secure and out of the robot's path. This was partly inspured by both single and dual rotational cable carriers:https://www.andreasravn.com/double-360-cable-carrier 
+
+![image](https://user-images.githubusercontent.com/41247872/132400469-ef4a5e51-c87b-498d-964b-41e53c9b3550.png) ![image](https://user-images.githubusercontent.com/41247872/132400537-9fe23a6a-fb62-4743-9aa6-01f4f7d4d0b2.png)
+
+![image](https://user-images.githubusercontent.com/41247872/132400613-0c7a5aa0-0191-4c8c-9a20-216904540bfc.png)
+
+
+### August 2021
+
+With the elctricals completed, the next phase was to integrate the software created earlier in the year. Currently, this stage of the development is in progress as there are a few issues being sorted out, as well as time constraints due to personal matters. 
+
+Since the stepepr motors were configured to be in 1/16th step mode, the Arduino isn't able to step multiple motors quickly enough. This is caused by both my inexperience with controlling high speed stepper motors, and the Arduino Mega's limitations. In this configuration, the Arduino itself is processing during each step of the moro. I am hoping to find out about either a software or hardware solution to this issue. This also affects the auto-homing procedure I created, where it uses gyroscopes at its joints to determine stepper motor angles. Too many operations and not enough compute time made the system slow down to a crawl. However at this stage, I was able to test its weight lifting capabilities which met the goal. 
+
+The code for the Arduino can be found here, no Python integration yet: https://github.com/ViktorVektor/BasementRobot/blob/main/FG006_Robot_Arm.ino
+
+
 Solidworks model of the bot:
 ![image](https://user-images.githubusercontent.com/41247872/132286744-f61dbbb3-6c37-4f1d-899b-ab8461038803.png)
 
-\\\\\\\\\\\ UNFINISHED
+\\\\\\\\\\\ To be continued
