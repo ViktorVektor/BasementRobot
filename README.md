@@ -88,11 +88,19 @@ An additional issue I encountered was powering the RAMPS board and stepepr motor
 
 #### Robot Arm Part 2
 
-After experiences with the first model, I researched methods of increasing torque through mechanical means. I learned about planetery gearsets and compound pulleys being used in robotics.  I found a helpful user demonstrating how one actuator they design functioned: https://www.thingiverse.com/thing:3293562. This design had a 38:1 ratio, allowing my robot to use a single stepper motor at the shoulder. Another method I learned about were compund pulleys, where a torque increase could be achieved over a distance: http://www.robotpark.com/academy/robotic-mechanisms-pulley-systems/
+After experiences with the first model, I researched methods of increasing torque through mechanical means. I learned about planetery gearsets and compound pulleys being used in robotics.  I found a helpful user demonstrating how one actuator they design functioned: https://www.thingiverse.com/thing:3293562. This design had a 38:1 ratio, allowing my robot to use a single stepper motor at the shoulder. Another method I learned about were compund pulleys, where a torque increase could be achieved over a distance: http://www.robotpark.com/academy/robotic-mechanisms-pulley-systems/ . This system could reduce the weight the shoulder stepper had to carry by moving the elbow stepper next to the base.
 
-To implement the gearbox was fairly streightforward, but a few things needed to be considered beforehand. Since bigger motors were being used, the physical footprint of the robot needed to be increased, bringing with it more weight acting on the base. More torque than the first robot was needed to run it so joint friction needed to be reduced.
+To implement the gearbox was fairly streightforward, but a few things needed to be considered beforehand. Since bigger motors were being used, the physical footprint of the robot needed to be increased, bringing with it more weight acting on the base. More torque than the first robot was needed to run it so joint friction needed to be reduced. At the shoulder where the first gearbox went, it needed to be strengthened so a wider and stronger housing was designed for it, fitting over the first robot's base. Within the gearbox itself, PTFE lubricant was used along wih steel ball bearings. 
 
 ![image](https://user-images.githubusercontent.com/41247872/132396874-662cc33c-154a-4346-a233-de8567c3abbd.png)
+
+For the pulley system, the input sprocket would be placed concentric with the shoulder gearbox which then compounded along the interior of the arm. Each stage had a 1:3 ratio, for a total of about 12:1 at the output. The sprockets were made of PLA filament, while the belts were made of the flexible TPU filament. 
+
+I closely followed a tutorial for the sprockets here: https://www.thingiverse.com/thing:16627 
+
+The belts were followed from here: https://www.thingiverse.com/thing:2682637
+
+![image](https://user-images.githubusercontent.com/41247872/132397670-73884dac-68f9-413c-9531-f396c2e9fd31.png)
 
 
 Solidworks model of the bot:
