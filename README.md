@@ -69,14 +69,30 @@ Here is a great video on the topic. While I had lead screws, this person used ba
 
 For the material of the robot, I opted to use Polylactic Acid (PLA) as the main structural material. This was due to its forgiving nature in printing and its availability. I had also been working with the material for some time now, so I was familiar with how it acted.
 
-#### Robot Arm
+#### Robot Arm Part 1
 
 For the arm itself, I had decided to use a 12:7:10 ratio for the Arm, Forearm, and Hand. Since I would be doing a 5-axis configuration, it would require 5 motors: One in the base, the shoulder, the elbow pitch, the wrist pitch, and the wrist rotation. I started work on the base of the robot.
 
-What I had come up with was a design that incorporated the motor into the base, which also had a slew bearing placed on the top of it. Wiring to the controller could be done via a hole in the back. I chose a slew bearing beacuse the base would be experiencing loads perpendicular to the top of the base. Since I did not have the tooling nor the funds to purchase such a bearing, I opted to 3D print one. I closely followed a tutorial here: https://www.thingiverse.com/thing:2375124
+What I had come up with was a design that incorporated the motor into the base, which also had a slew bearing placed on the top of it. Wiring to the controller could be done via a hole in the back. I chose a slew bearing beacuse the base would be experiencing loads perpendicular to the top of the base. Since I did not have the tooling nor the funds to purchase such a bearing, I opted to 3D print one. I closely followed a tutorial here: https://www.thingiverse.com/thing:2375124. The RAMPS and a 28BYJ-48 motor was to be in the base initially, but later on the motor was upgraded to a NEMA-17 motor so there was no room for the controller.
 
 The base of the robot:
-![image](https://user-images.githubusercontent.com/41247872/132292562-a82466d5-b034-41ff-99ac-5a0a441b0a44.png)
+![image](https://user-images.githubusercontent.com/41247872/132292562-a82466d5-b034-41ff-99ac-5a0a441b0a44.png) ![image](https://user-images.githubusercontent.com/41247872/132393876-5d9fd7bc-86a3-44e2-9deb-055b40fea06a.png)
+
+After completing the base, work on the arm began. While only using the 28BYJ-48 stepper motors, each one was modified to be bipolar and ran at 12 volts. However, this did not provide enough torque since there was no gearing in place. The first design of the robot arm did not work so well, so an arm design using NEMA-17 motors and gear reducitons was devised.
+
+![image](https://user-images.githubusercontent.com/41247872/132394735-67a3ec41-c09f-48b6-b05c-3b3cc1bb18d7.png)
+
+An additional issue I encountered was powering the RAMPS board and stepepr motors. The ramps board required at least 12V 5A to power the board and stepper drivers. At the time, I had insufficient means of powering it, so I converted an old desktop PC power supply into a benchtop power supply using some spare parts and a power meter. 
+
+![image](https://user-images.githubusercontent.com/41247872/132395448-1738fdaf-8d79-408c-9cfd-f2bc6d8dfbd2.png)
+
+#### Robot Arm Part 2
+
+After experiences with the first model, I researched methods of increasing torque through mechanical means. I learned about planetery gearsets and compound pulleys being used in robotics.  I found a helpful user demonstrating how one actuator they design functioned: https://www.thingiverse.com/thing:3293562. This design had a 38:1 ratio, allowing my robot to use a single stepper motor at the shoulder. Another method I learned about were compund pulleys, where a torque increase could be achieved over a distance: http://www.robotpark.com/academy/robotic-mechanisms-pulley-systems/
+
+To implement the gearbox was fairly streightforward, but a few things needed to be considered beforehand. Since bigger motors were being used, the physical footprint of the robot needed to be increased, bringing with it more weight acting on the base. More torque than the first robot was needed to run it so joint friction needed to be reduced.
+
+![image](https://user-images.githubusercontent.com/41247872/132396874-662cc33c-154a-4346-a233-de8567c3abbd.png)
 
 
 Solidworks model of the bot:
