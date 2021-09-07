@@ -62,4 +62,4 @@ For the material of the robot, I opted to use Polylactic Acid (PLA) as the main 
 
 For the arm itself, I had decided to use a 12:7:10 ratio for the Arm, Forearm, and Hand. Since I would be doing a 5-axis configuration, it would require 5 motors: One in the base, the shoulder, the elbow pitch, the wrist pitch, and the wrist rotation. 
 
-- - - - UNFINISHED - - - -
+\\\\\\\\\\\ UNFINISHED
